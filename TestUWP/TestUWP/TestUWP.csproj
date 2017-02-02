@@ -95,6 +95,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Groups\SampleGroup\SampleGroup.cs" />
+    <Compile Include="Interface\IGroup.cs" />
+    <Compile Include="Interface\IModule.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -104,6 +107,8 @@
     </Compile>
     <Compile Include="Utility\ModuleGetter.cs" />
     <Compile Include="ViewModel\GroupViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\ModuleViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -138,16 +143,6 @@
   <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="View\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TestUWP.Common\TestUWP.Common.csproj">
-      <Project>{F66B6817-57BE-4FD5-9B60-1662153AE9FA}</Project>
-      <Name>TestUWP.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TestUWP.SampleGroup\TestUWP.SampleGroup.csproj">
-      <Project>{c989a63c-7e13-4440-ba44-1f45ed219816}</Project>
-      <Name>TestUWP.SampleGroup</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

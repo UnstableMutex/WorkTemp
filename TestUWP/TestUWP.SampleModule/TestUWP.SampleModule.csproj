@@ -112,9 +112,9 @@
     <EmbeddedResource Include="Properties\TestUWP.SampleModule.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestUWP.Common\TestUWP.Common.csproj">
-      <Project>{f66b6817-57be-4fd5-9b60-1662153ae9fa}</Project>
-      <Name>TestUWP.Common</Name>
+    <ProjectReference Include="..\TestUWP\TestUWP.csproj">
+      <Project>{23DAA569-960D-4A87-B8F7-F365A6B6631F}</Project>
+      <Name>TestUWP</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
