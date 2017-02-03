@@ -1,0 +1,18 @@
+﻿<Window x:Class="TestWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestWPF"
+        xmlns:view="clr-namespace:TestWPF.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+         <UniformGrid Rows="4" Columns="2">
+        <view:ModuleView/>
+        <view:ModuleView/>
+        <view:ModuleView/>
+    </UniformGrid>  
+    </Grid>
+ 
+</Window>
