@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestWPF.Common
 {
-    interface IModuleGroup:IName
+   public interface IModuleGroup:IName
     {
         string Directory { get; }
     }
