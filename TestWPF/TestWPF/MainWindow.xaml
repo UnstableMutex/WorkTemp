@@ -7,12 +7,6 @@
         xmlns:view="clr-namespace:TestWPF.View"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
-         <UniformGrid Rows="4" Columns="2">
-        <view:ModuleView/>
-        <view:ModuleView/>
-        <view:ModuleView/>
-    </UniformGrid>  
-    </Grid>
+<view:MainView/>
  
 </Window>
