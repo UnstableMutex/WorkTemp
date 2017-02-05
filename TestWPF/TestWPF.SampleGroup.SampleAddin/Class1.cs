@@ -11,7 +11,12 @@ namespace TestWPF.SampleGroup.SampleAddin
     [Export(typeof(IModule))]
     public class SampleModule:IModule
     {
-        public string Name { get; }
-        public string FileName { get; }
+        public SampleModule()
+        {
+            Name = "SampleModule";
+            FileName = "notepad.exe";
+        }
+        public string Name { get; private set; }
+        public string FileName { get; private set; }
     }
 }

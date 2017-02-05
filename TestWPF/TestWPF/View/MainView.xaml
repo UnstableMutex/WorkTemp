@@ -6,5 +6,11 @@
              xmlns:local="clr-namespace:TestWPF.View"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-   <local:GroupView/>
+  <ItemsControl ItemsSource="{Binding Groups}">
+      <ItemsControl.ItemTemplate>
+          <DataTemplate>
+              <local:GroupView/>
+          </DataTemplate>
+      </ItemsControl.ItemTemplate>
+  </ItemsControl>
 </UserControl>

@@ -19,14 +19,14 @@ namespace TestWPF.SampleGroup
         }
 
         
-        IEnumerable<ModuleViewModel> GetModules()
+       public override IEnumerable<IModule> GetModules()
         {
             var c = new CompositionContainer(new DirectoryCatalog(Directory));
             c.ComposeParts();
             var modules = c.GetExportedValues<IModule>();
-            return modules.Select(x => new ModuleViewModel(x)).ToList();
+            return modules;
 
         }
-        public IEnumerable<ModuleViewModel> Modules { get { return GetModules(); } }
+        
     }
 }

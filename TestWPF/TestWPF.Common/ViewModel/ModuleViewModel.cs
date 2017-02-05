@@ -14,5 +14,6 @@ namespace TestWPF.Common.ViewModel
         {
             _module = module;
         }
+        public string Name { get { return _module.Name; } }
     }
 }

@@ -9,5 +9,6 @@ namespace TestWPF.Common
    public interface IModuleGroup:IName
     {
         string Directory { get; }
+        IEnumerable<IModule> GetModules();
     }
 }

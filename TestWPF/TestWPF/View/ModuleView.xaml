@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:TestWPF.View"
              mc:Ignorable="d" 
              Height="100" Width="100">
-    <Grid Background="Blue">
-            
+    <Grid Background="LightSkyBlue">
+            <TextBlock Foreground="Black" Text="{Binding Name}" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
     </Grid>
 </UserControl>

@@ -7,13 +7,19 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
    
-     <HeaderedItemsControl>
+     <HeaderedItemsControl ItemsSource="{Binding Modules}">
          <HeaderedItemsControl.Header>Header</HeaderedItemsControl.Header>
          <HeaderedItemsControl.ItemsPanel>
              <ItemsPanelTemplate>
                     <UniformGrid Rows="4" Columns="2"/>
                 </ItemsPanelTemplate>
+            
          </HeaderedItemsControl.ItemsPanel>
+         <ItemsControl.ItemTemplate>
+             <DataTemplate>
+                 <local:ModuleView/>
+             </DataTemplate>
+         </ItemsControl.ItemTemplate>
      </HeaderedItemsControl>
        
   

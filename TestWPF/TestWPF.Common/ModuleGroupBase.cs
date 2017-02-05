@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace TestWPF.Common
 {
 
-    public class ModuleGroupBase : IModuleGroup
+    public abstract class ModuleGroupBase : IModuleGroup
     {
         public ModuleGroupBase(string name)
         {
@@ -16,5 +16,6 @@ namespace TestWPF.Common
         }
         public string Name { get; private set; }
         public string Directory { get; private set; }
+        public abstract IEnumerable<IModule> GetModules();
     }
 }
