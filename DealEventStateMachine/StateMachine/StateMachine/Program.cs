@@ -11,7 +11,8 @@ namespace StateMachine
         static void Main(string[] args)
         {
             Activity workflow1 = new DealEventStateMashine();
-            WorkflowInvoker.Invoke(workflow1);
+          var result=  WorkflowInvoker.Invoke(workflow1);
+       
             Console.ReadKey();
         }
     }

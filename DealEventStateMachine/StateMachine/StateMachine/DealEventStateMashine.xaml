@@ -10,7 +10,7 @@
  xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="argument1" Type="OutArgument(x:Int32)" />
+    <x:Property Name="outArg" Type="OutArgument(x:Int32)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap2010:WorkflowViewState.IdRef>StateMachine.DealEventStateMashine_1</sap2010:WorkflowViewState.IdRef>
@@ -54,11 +54,8 @@
             <Transition.To>
               <State x:Name="__ReferenceID2" DisplayName="Close" sap2010:WorkflowViewState.IdRef="State_3">
                 <State.Entry>
-                  <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="CloseEntry" />
-                </State.Entry>
-                <State.Exit>
-                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
-                    <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="CloseExit" />
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="CloseEntry" />
                     <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">
@@ -70,30 +67,51 @@
                       </Assign.Value>
                     </Assign>
                   </Sequence>
+                </State.Entry>
+                <State.Exit>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+                    <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="CloseExit" />
+                  </Sequence>
                 </State.Exit>
                 <State.Transitions>
                   <Transition DisplayName="T1" sap2010:WorkflowViewState.IdRef="Transition_1">
-                    <Transition.Trigger>
-                      <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="t1trigger" />
-                    </Transition.Trigger>
                     <Transition.To>
                       <State x:Name="__ReferenceID3" DisplayName="Prolongation" sap2010:WorkflowViewState.IdRef="State_2">
+                        <State.Entry>
+                          <Assign sap2010:WorkflowViewState.IdRef="Assign_4">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpReference x:TypeArguments="x:Int32">outArg</mca:CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">1</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </State.Entry>
                         <State.Transitions>
                           <Transition DisplayName="T5" sap2010:WorkflowViewState.IdRef="Transition_4">
+                            <Transition.Trigger>
+                              <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="t5" />
+                            </Transition.Trigger>
                             <Transition.To>
-                              <State x:Name="__ReferenceID0" DisplayName="FinalState" sap2010:WorkflowViewState.IdRef="State_5" IsFinal="True" />
+                              <State x:Name="__ReferenceID0" DisplayName="FinalState" sap2010:WorkflowViewState.IdRef="State_5" IsFinal="True">
+                                <State.Entry>
+                                  <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_11" Text="FinalState" />
+                                </State.Entry>
+                              </State>
                             </Transition.To>
                           </Transition>
                         </State.Transitions>
                       </State>
                     </Transition.To>
                     <Transition.Action>
-                      <Sequence>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_2">
                         <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="t1success" />
-                        <Assign>
+                        <Assign sap2010:WorkflowViewState.IdRef="Assign_2">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Int32">
-                              <mca:CSharpReference x:TypeArguments="x:Int32">argument1</mca:CSharpReference>
+                              <mca:CSharpReference x:TypeArguments="x:Int32">outArg</mca:CSharpReference>
                             </OutArgument>
                           </Assign.To>
                           <Assign.Value>
@@ -101,9 +119,7 @@
                               <mca:CSharpValue x:TypeArguments="x:Int32">i</mca:CSharpValue>
                             </InArgument>
                           </Assign.Value>
-                          <sap2010:WorkflowViewState.IdRef>Assign_2</sap2010:WorkflowViewState.IdRef>
                         </Assign>
-                        <sap2010:WorkflowViewState.IdRef>Sequence_2</sap2010:WorkflowViewState.IdRef>
                       </Sequence>
                     </Transition.Action>
                     <Transition.Condition>
@@ -111,19 +127,35 @@
                     </Transition.Condition>
                   </Transition>
                   <Transition DisplayName="T3" sap2010:WorkflowViewState.IdRef="Transition_3">
-                    <Transition.Trigger>
-                      <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="t3trigger" />
-                    </Transition.Trigger>
                     <Transition.To>
                       <State x:Name="__ReferenceID4" DisplayName="Error" sap2010:WorkflowViewState.IdRef="State_4">
                         <State.Entry>
-                          <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="errorEntry" />
+                          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3">
+                            <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="errorEntry" />
+                            <Assign sap2010:WorkflowViewState.IdRef="Assign_3">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Int32">
+                                  <mca:CSharpReference x:TypeArguments="x:Int32">outArg</mca:CSharpReference>
+                                </OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Int32">-1</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
                         </State.Entry>
                         <State.Exit>
                           <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="ErrorExit" />
                         </State.Exit>
                         <State.Transitions>
-                          <Transition DisplayName="T4" sap2010:WorkflowViewState.IdRef="Transition_5" To="{x:Reference __ReferenceID0}" />
+                          <Transition DisplayName="T4" sap2010:WorkflowViewState.IdRef="Transition_5">
+                            <Transition.Trigger>
+                              <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="t4" />
+                            </Transition.Trigger>
+                            <Transition.To>
+                              <x:Reference>__ReferenceID0</x:Reference>
+                            </Transition.To>
+                          </Transition>
                         </State.Transitions>
                       </State>
                     </Transition.To>
@@ -149,62 +181,71 @@
     <StateMachine.Variables>
       <Variable x:TypeArguments="x:Int32" Default="10" Name="i" />
     </StateMachine.Variables>
-    <sads:DebugSymbol.Symbol>d2FDOlxVc2Vyc1xzb255YVxEZXNrdG9wXERlYWxFdmVudFN0YXRlTWFjaGluZVxTdGF0ZU1hY2hpbmVcU3RhdGVNYWNoaW5lXERlYWxFdmVudFN0YXRlTWFzaGluZS54YW1sJSsDmQESAgEBlgEzlgE3AgE3LQeOAQ8CATA3D4oBFwIBDlAXWB8CAQt2F4ABHwIBBFQfVJIBAgECLwsvVwIBNTILMlYCATM5EzlgAgEuPBNIHgIBJk0XTWMCASRuF25aAgEhWxdrIgIBF3MXc2MCARWGAReGAVoCARKDAReDAWQCARB4G3hoAgEJext7ZwIBBy9JL1QCATYySTJTAgE0OVE5XQIBLz0VPWECASw+FUceAgEnTVVNYAIBJVwZXGUCAR9dGWkiAgEYc1VzYAIBFoMBVoMBYQIBEXhZeGUCAQp7WXtkAgEIPVM9XgIBLUU/RUACAStBG0FhAgEoXFdcYgIBIGUfZV0CARxgH2BtAgEZ</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d3NDOlxVc2Vyc1xzdG9ybVxEb2N1bWVudHNcR2l0SHViXFdvcmtUZW1wXERlYWxFdmVudFN0YXRlTWFjaGluZVxTdGF0ZU1hY2hpbmVcU3RhdGVNYWNoaW5lXERlYWxFdmVudFN0YXRlTWFzaGluZS54YW1sLysDuQESAgEBtgEztgE3AgFELQeuAQ8CAT03D6oBFwIBHU8Xah8CARSDARegAR8CAQZiH2YnAgECLwsvVwIBQjILMlYCAUA5E0UeAgE1SBNKHgIBMn4XfloCAS5tF3siAgEkpgEXpgFaAgEhowEXowFkAgEfURtaJAIBGF8fX2UCARaFARuRASYCAQyUARuUAWcCAQqZAR+ZAWUCAQhkI2RxAgEEL0kvVAIBQzJJMlMCAUE6FTpiAgE7OxVEHgIBNkkVSWECATNuGW5lAgEsbxl6IgIBJaMBVqMBYQIBIFhFWEYCARxUIVRsAgEZX15fYgIBF4YBHYYBagIBEocBHZABJgIBDZQBWZQBZAIBC5kBXpkBYgIBCWRiZG4CAQU6UzpfAgE8Qj9CQAIBOj4bPmECATdJU0leAgE0blduYgIBLXcfd10CASlyH3JqAgEmhgFbhgFnAgETjgFHjgFJAgERigEjigFuAgEO</sads:DebugSymbol.Symbol>
   </StateMachine>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
       <sap2010:ViewStateData Id="WriteLine_1" sap:VirtualizedContainerService.HintSize="210,62" />
       <sap2010:ViewStateData Id="WriteLine_2" sap:VirtualizedContainerService.HintSize="210,62" />
-      <sap2010:ViewStateData Id="WriteLine_3" sap:VirtualizedContainerService.HintSize="210,62" />
-      <sap2010:ViewStateData Id="WriteLine_4" sap:VirtualizedContainerService.HintSize="242,62" />
-      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="242,62" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="264,288">
+      <sap2010:ViewStateData Id="WriteLine_3" sap:VirtualizedContainerService.HintSize="243.2,62.4" />
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="243.2,62.4" />
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="265.6,289.6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="WriteLine_7" sap:VirtualizedContainerService.HintSize="210,62" />
-      <sap2010:ViewStateData Id="State_5" sap:VirtualizedContainerService.HintSize="114,61">
+      <sap2010:ViewStateData Id="WriteLine_4" sap:VirtualizedContainerService.HintSize="210.4,62.4" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="232.8,187.2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Assign_4" sap:VirtualizedContainerService.HintSize="243.2,62.4" />
+      <sap2010:ViewStateData Id="WriteLine_13" sap:VirtualizedContainerService.HintSize="210.4,62.4" />
+      <sap2010:ViewStateData Id="WriteLine_11" sap:VirtualizedContainerService.HintSize="210.4,62.4" />
+      <sap2010:ViewStateData Id="State_5" sap:VirtualizedContainerService.HintSize="114.4,61.6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">200,442.5</av:Point>
-            <av:Size x:Key="ShapeSize">114,61</av:Size>
+            <av:Size x:Key="ShapeSize">114.4,61.6</av:Size>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Transition_4">
+      <sap2010:ViewStateData Id="Transition_4" sap:VirtualizedContainerService.HintSize="429.6,514.4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:PointCollection x:Key="ConnectorLocation">394.1,392.5 394.1,422.5 239.9,422.5 239.9,442.5</av:PointCollection>
+            <av:PointCollection x:Key="ConnectorLocation">394.28,393.5 394.28,423.5 240.04,423.5 240.04,442.5</av:PointCollection>
             <x:Int32 x:Key="SrcConnectionPointIndex">35</x:Int32>
             <x:Int32 x:Key="DestConnectionPointIndex">26</x:Int32>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="State_2" sap:VirtualizedContainerService.HintSize="158,63">
+      <sap2010:ViewStateData Id="State_2" sap:VirtualizedContainerService.HintSize="158.4,64">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">323,329.5</av:Point>
-            <av:Size x:Key="ShapeSize">158,63</av:Size>
+            <av:Size x:Key="ShapeSize">158.4,64</av:Size>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
             <x:Double x:Key="StateContainerWidth">144</x:Double>
             <x:Double x:Key="StateContainerHeight">27.080000000000041</x:Double>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="WriteLine_8" sap:VirtualizedContainerService.HintSize="242,62" />
-      <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="242,62" />
-      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="264,288">
+      <sap2010:ViewStateData Id="WriteLine_8" sap:VirtualizedContainerService.HintSize="243.2,62.4" />
+      <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="243.2,62.4" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="265.6,289.6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Transition_1" sap:VirtualizedContainerService.HintSize="430,687">
+      <sap2010:ViewStateData Id="Transition_1" sap:VirtualizedContainerService.HintSize="429.6,691.2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:PointCollection x:Key="ConnectorLocation">277.1,179.5 277.1,149.5 409.35,149.5 409.35,329.5</av:PointCollection>
@@ -213,10 +254,18 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="WriteLine_9" sap:VirtualizedContainerService.HintSize="210,62" />
-      <sap2010:ViewStateData Id="WriteLine_5" sap:VirtualizedContainerService.HintSize="210,62" />
-      <sap2010:ViewStateData Id="WriteLine_6" sap:VirtualizedContainerService.HintSize="210,62" />
-      <sap2010:ViewStateData Id="Transition_5">
+      <sap2010:ViewStateData Id="WriteLine_5" sap:VirtualizedContainerService.HintSize="243.2,62.4" />
+      <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="243.2,62.4" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="265.6,289.6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WriteLine_6" sap:VirtualizedContainerService.HintSize="210.4,62.4" />
+      <sap2010:ViewStateData Id="WriteLine_12" sap:VirtualizedContainerService.HintSize="210.4,62.4" />
+      <sap2010:ViewStateData Id="Transition_5" sap:VirtualizedContainerService.HintSize="429.6,514.4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:PointCollection x:Key="ConnectorLocation">181.2,343.5 181.2,373.5 257,373.5 257,442.5</av:PointCollection>
@@ -225,17 +274,17 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="State_4" sap:VirtualizedContainerService.HintSize="114,61">
+      <sap2010:ViewStateData Id="State_4" sap:VirtualizedContainerService.HintSize="114.4,61.6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">90,282.5</av:Point>
-            <av:Size x:Key="ShapeSize">114,61</av:Size>
+            <av:Size x:Key="ShapeSize">114.4,61.6</av:Size>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="WriteLine_10" sap:VirtualizedContainerService.HintSize="210,62" />
-      <sap2010:ViewStateData Id="Transition_3" sap:VirtualizedContainerService.HintSize="430,509">
+      <sap2010:ViewStateData Id="WriteLine_10" sap:VirtualizedContainerService.HintSize="210.4,62.4" />
+      <sap2010:ViewStateData Id="Transition_3" sap:VirtualizedContainerService.HintSize="429.6,512">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:PointCollection x:Key="ConnectorLocation">242.9,240.5 242.9,270.5 164.1,270.5 164.1,282.5</av:PointCollection>
@@ -244,11 +293,11 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="State_3" sap:VirtualizedContainerService.HintSize="114,61">
+      <sap2010:ViewStateData Id="State_3" sap:VirtualizedContainerService.HintSize="325.6,756.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">203,179.5</av:Point>
-            <av:Size x:Key="ShapeSize">114,61</av:Size>
+            <av:Size x:Key="ShapeSize">114.4,61.6</av:Size>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -262,16 +311,16 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="State_1" sap:VirtualizedContainerService.HintSize="114,61">
+      <sap2010:ViewStateData Id="State_1" sap:VirtualizedContainerService.HintSize="114.4,61.6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">50,80</av:Point>
-            <av:Size x:Key="ShapeSize">114,61</av:Size>
+            <av:Size x:Key="ShapeSize">114.4,61.6</av:Size>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="StateMachine_1" sap:VirtualizedContainerService.HintSize="614,636">
+      <sap2010:ViewStateData Id="StateMachine_1" sap:VirtualizedContainerService.HintSize="614.4,636.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -282,7 +331,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="StateMachine.DealEventStateMashine_1" sap:VirtualizedContainerService.HintSize="654,716" />
+      <sap2010:ViewStateData Id="StateMachine.DealEventStateMashine_1" sap:VirtualizedContainerService.HintSize="654.4,716.8" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
