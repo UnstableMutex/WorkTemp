@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace TestConsole
 {
@@ -10,9 +9,11 @@ namespace TestConsole
     {
         static void Main(string[] args)
         {
-        	double d=6;
-        	Console.WriteLine(Math.Sign(d));
-
+        	int? d=6;
+        	Console.WriteLine(d.ToString());
+            int? n = null;
+            var ns = n.ToString();
+            Console.WriteLine(ns);
             Console.ReadKey();
         }
     }
