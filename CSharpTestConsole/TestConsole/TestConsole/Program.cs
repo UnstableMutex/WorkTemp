@@ -9,12 +9,26 @@ namespace TestConsole
     {
         static void Main(string[] args)
         {
-        	int? d=6;
-        	Console.WriteLine(d.ToString());
-            int? n = null;
-            var ns = n.ToString();
-            Console.WriteLine(ns);
+            int[] arr = {14, 45, 67};
+            var s = Join(arr);
+            var a = string.Join(",", arr.Select(x=>x.ToString()).ToArray());
+            var c = arr.ToString();
+            Console.WriteLine(s);
             Console.ReadKey();
+        }
+               
+
+             
+        public static string Join(int[] array)
+        {
+            string sTrades = string.Empty;
+            for (int i = 0; i < array.Count(); i++)
+            {
+                sTrades += array[i].ToString();
+                if (i < array.Count() - 1)
+                    sTrades += ",";
+            }
+            return sTrades;
         }
     }
 }
