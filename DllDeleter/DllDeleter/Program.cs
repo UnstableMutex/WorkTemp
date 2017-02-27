@@ -12,7 +12,7 @@ namespace DllDeleter
     {
         static void Main(string[] args)
         {
-            string dir = @"C:\FocusETX";
+            string dir = GetFolder();
             var files = Directory.GetFiles(dir, "*", SearchOption.AllDirectories);
             string[] patternsTodelete = new[] { @"\w+.dll\d+", @"\w+.dll(_|\.)\d+" };
             foreach (var file in files)
@@ -29,6 +29,13 @@ namespace DllDeleter
                 
             }
 
+        }
+
+        private static string GetFolder()
+        {
+            var p = "FOCUS_HOME_FOLDER";
+            var path = Environment.GetEnvironmentVariable(p);
+            return path;
         }
     }
 }
