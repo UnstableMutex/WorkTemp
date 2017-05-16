@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:6767/deal?xsd=xsd12" namespace="http://www.w3.org/2005/09/ws-i18n" />
+  <xs:import schemaLocation="http://localhost:6767/deal?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:6767/deal?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/Egar.TransactionService.Client.Trades" />
+  <xs:import schemaLocation="http://localhost:6767/deal?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" />
+  <xs:import schemaLocation="http://localhost:6767/deal?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface" />
+  <xs:import schemaLocation="http://localhost:6767/deal?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/_BaseObjects" />
+  <xs:element name="InitializeSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WindowsLoginName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="HostName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ApplicationName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://www.w3.org/2005/09/ws-i18n" minOccurs="0" name="International" nillable="true" type="q1:International" />
+        <xs:element minOccurs="0" name="NumberDecimalSeparator" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NumberGroupSeparator" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ShortDatePattern" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitializeSessionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InitializeSessionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseSession">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseSessionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CloseSessionResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloneDeal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="names" nillable="true" type="q2:ArrayOfstring" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="values" nillable="true" type="q3:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloneDealResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CloneDealResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewDeal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Egar.TransactionService.Client.Trades" minOccurs="0" name="dealType" type="q4:deal_type" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Egar.TransactionService.Client.Trades" minOccurs="0" name="instrType" type="q5:instr_type" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Egar.TransactionService.Client.Trades" minOccurs="0" name="tradeType" type="q6:trade_type" />
+        <xs:element minOccurs="0" name="fieldsFilter" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewDealResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="CreateNewDealResult" nillable="true" type="q7:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitiateDeal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="names" nillable="true" type="q8:ArrayOfstring" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="values" nillable="true" type="q9:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitiateDealResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="InitiateDealResult" nillable="true" type="q10:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadTrade">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tradeId" type="xs:int" />
+        <xs:element minOccurs="0" name="IsReadonlyMode" type="xs:boolean" />
+        <xs:element minOccurs="0" name="fieldsFilter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="loadCanceledEvents" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadTradeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="LoadTradeResult" nillable="true" type="q11:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DealFieldsChange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="names" nillable="true" type="q12:ArrayOfstring" />
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="values" nillable="true" type="q13:ArrayOfanyType" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="fieldsFilter" nillable="true" type="q14:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DealFieldsChangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="DealFieldsChangeResult" nillable="true" type="q15:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DealFieldChange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="names" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="values" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DealFieldChangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="DealFieldChangeResult" nillable="true" type="q16:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DealFieldAction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fieldName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="action" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="val" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DealFieldActionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="DealFieldActionResult" nillable="true" type="q17:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReloadFields">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReloadFieldsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="ReloadFieldsResult" nillable="true" type="q18:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TryExecuteSTPAction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stpAction" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="execute" type="xs:boolean" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface" minOccurs="0" name="flags" nillable="true" type="q19:InterActionParams" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TryExecuteSTPActionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="TryExecuteSTPActionResult" nillable="true" type="q20:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompleteExecuteAction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stpAction" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="execute" type="xs:boolean" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface" minOccurs="0" name="fromUser" nillable="true" type="q21:InterActionParams" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompleteExecuteActionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="CompleteExecuteActionResult" nillable="true" type="q22:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClickButton">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="buttonName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClickButtonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="ClickButtonResult" nillable="true" type="q23:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventsSchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ShowCanceledEvents" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventsScheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="GetEventsScheduleResult" nillable="true" type="q24:EventsScheduleProxy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ScheduleGetProperty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="property" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ScheduleGetPropertyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ScheduleGetPropertyResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ScheduleGetParameter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="eventId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parameter" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ScheduleGetParameterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="ScheduleGetParameterResult" nillable="true" type="q25:ServiceValueResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EventStartEdit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="scheduleField" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="eventId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="eventType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="eventLeg" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EventStartEditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="EventStartEditResult" nillable="true" type="q26:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EventSaveEdit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="scheduleField" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="eventId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EventSaveEditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="EventSaveEditResult" nillable="true" type="q27:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EventSetValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="scheduleField" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="eventId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="field" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EventSetValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="EventSetValueResult" nillable="true" type="q28:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EventCancelEdit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="scheduleField" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="eventId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EventCancelEditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="EventCancelEditResult" nillable="true" type="q29:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EventTryExecuteAction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="scheduleField" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="eventId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="action" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="execute" type="xs:boolean" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface" minOccurs="0" name="actionParams" nillable="true" type="q30:InterActionParams" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EventTryExecuteActionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="EventTryExecuteActionResult" nillable="true" type="q31:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EventClickButton">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eventId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="buttonName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EventClickButtonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="EventClickButtonResult" nillable="true" type="q32:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkedTradeEvaluateField">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eventId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="field" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkedTradeEvaluateFieldResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="LinkedTradeEvaluateFieldResult" nillable="true" type="q33:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkedTradeExecuteSTPAction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eventId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="stpAction" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="execute" type="xs:boolean" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface" minOccurs="0" name="fromUser" nillable="true" type="q34:InterActionParams" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkedTradeExecuteSTPActionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="LinkedTradeExecuteSTPActionResult" nillable="true" type="q35:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintTicket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="id" nillable="true" type="q36:ArrayOfint" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Egar.TransactionService.Client.Trades" minOccurs="0" name="documentType" type="q37:fd_object_type" />
+        <xs:element minOccurs="0" name="cancel_flag" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintTicketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="PrintTicketResult" nillable="true" type="q38:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTradeEndOfDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sysDate" type="xs:dateTime" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Egar.TransactionService.Client.Trades" minOccurs="0" name="dealType" nillable="true" type="q39:deal_type" />
+        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="tradeID" nillable="true" type="q40:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTradeEndOfDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="UpdateTradeEndOfDateResult" nillable="true" type="q41:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTrade">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tradeID" type="xs:int" />
+        <xs:element xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="names" nillable="true" type="q42:ArrayOfstring" />
+        <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="values" nillable="true" type="q43:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTradeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="UpdateTradeResult" nillable="true" type="q44:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecalcOpenTrade">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tradeId" type="xs:int" />
+        <xs:element minOccurs="0" name="dateFrom" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateTill" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="sysDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="saveToDB" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecalcOpenTradeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="RecalcOpenTradeResult" nillable="true" type="q45:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BulkTryExecuteSTPAction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="trades" nillable="true" type="q46:ArrayOfint" />
+        <xs:element minOccurs="0" name="stpAction" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="execute" type="xs:boolean" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface" minOccurs="0" name="fromUser" nillable="true" type="q47:InterActionParams" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BulkTryExecuteSTPActionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="BulkTryExecuteSTPActionResult" nillable="true" type="q48:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFundingConsolidatedTrade">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="seedTradeId" type="xs:int" />
+        <xs:element xmlns:q49="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="books" nillable="true" type="q49:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFundingConsolidatedTradeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="GetFundingConsolidatedTradeResult" nillable="true" type="q50:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BulkEventTryExecuteAction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="eventIDs" nillable="true" type="q51:ArrayOfint" />
+        <xs:element minOccurs="0" name="action" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="execute" type="xs:boolean" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface" minOccurs="0" name="actionParams" nillable="true" type="q52:InterActionParams" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BulkEventTryExecuteActionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="BulkEventTryExecuteActionResult" nillable="true" type="q53:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeTradeBOStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tradeID" type="xs:int" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Egar.TransactionService.Client.Trades" minOccurs="0" name="boStatus" type="q54:bo_status" />
+        <xs:element minOccurs="0" name="SmartId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AgreementNum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CommissionNum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BrokerPactNum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DateFactPay" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CurrId" type="xs:int" />
+        <xs:element minOccurs="0" name="DateFactDelivery" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeTradeBOStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="ChangeTradeBOStatusResult" nillable="true" type="q55:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeTradeLSStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="tradeIDs" nillable="true" type="q56:ArrayOfint" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Egar.TransactionService.Client.Trades" minOccurs="0" name="lsStatus" type="q57:trade_ls_status" />
+        <xs:element minOccurs="0" name="traderName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeTradeLSStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="ChangeTradeLSStatusResult" nillable="true" type="q58:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BulkAddRateChange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="trades" nillable="true" type="q59:ArrayOfint" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="rateChange" nillable="true" type="q60:DealEventProxy" />
+        <xs:element minOccurs="0" name="changedField" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="execute" type="xs:boolean" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface" minOccurs="0" name="fromUser" nillable="true" type="q61:InterActionParams" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BulkAddRateChangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="BulkAddRateChangeResult" nillable="true" type="q62:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSessionStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="abort" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSessionStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="GetSessionStatusResult" nillable="true" type="q63:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportBasketRepo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/_BaseObjects" minOccurs="0" name="nrdTrade" nillable="true" type="q64:NrdTradeBase" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportBasketRepoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/_BaseObjects" minOccurs="0" name="ImportBasketRepoResult" nillable="true" type="q65:NrdImportInfoCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadTradeMonitor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tradeID" type="xs:int" />
+        <xs:element minOccurs="0" name="horizon" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="loadCancelledEvents" type="xs:boolean" />
+        <xs:element minOccurs="0" name="extendedAttributes" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadTradeMonitorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="LoadTradeMonitorResult" nillable="true" type="q66:ServiceDealOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

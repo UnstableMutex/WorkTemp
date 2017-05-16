@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/_BaseObjects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/_BaseObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:6767/deal?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/Egar.TransactionService.Client.Trades" />
+  <xs:complexType name="NrdTradeBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Exp_num" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Exp_numIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Expdeal_id" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Expdeal_idIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Exrqntn_dt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Exrqntn_dtIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Liabilities" nillable="true" type="tns:ArrayOfNrdLiability" />
+      <xs:element minOccurs="0" name="Portfolio" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PortfolioIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProfitCenter" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProfitCenterIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Reg_date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Reg_dateIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Reg_no" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reg_noIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Termntn_dt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Termntn_dtIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TransactionState_id" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="TransactionState_idIsNull" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NrdTradeBase" nillable="true" type="tns:NrdTradeBase" />
+  <xs:complexType name="ArrayOfNrdLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NrdLiability" nillable="true" type="tns:NrdLiability" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNrdLiability" nillable="true" type="tns:ArrayOfNrdLiability" />
+  <xs:complexType name="NrdLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Backet_c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Backet_cIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Exp_id" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Exp_idIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="F_money" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="F_moneyIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NrdCashLiability" nillable="true" type="tns:NrdCashLiability" />
+      <xs:element minOccurs="0" name="NrdSecLiabilities" nillable="true" type="tns:ArrayOfNrdSecLiability" />
+      <xs:element minOccurs="0" name="Reg_no" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reg_noIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TransactionState_id" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="TransactionState_idIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="accounting_basket" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="accounting_basketIsNull" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NrdLiability" nillable="true" type="tns:NrdLiability" />
+  <xs:complexType name="NrdCashLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cash_open" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Cash_openIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorMessageIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Focus_tradeID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Focus_tradeIDIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Interest" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="InterestIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Reg_no" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reg_noIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TransactionState_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TransactionState_idIsNull" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NrdCashLiability" nillable="true" type="tns:NrdCashLiability" />
+  <xs:complexType name="ArrayOfNrdSecLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NrdSecLiability" nillable="true" type="tns:NrdSecLiability" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNrdSecLiability" nillable="true" type="tns:ArrayOfNrdSecLiability" />
+  <xs:complexType name="NrdSecLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Basis" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BasisIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Focus_tradeID1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Focus_tradeID1IsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Focus_tradeID2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Focus_tradeID2IsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Link_exp" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Link_expIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Reg_no" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reg_noIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Sec_isin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sec_isinIsNull" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Egar.TransactionService.Client.Trades" minOccurs="0" name="i_type" nillable="true" type="q1:instr_type" />
+      <xs:element minOccurs="0" name="i_typeIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="instrument" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="instrumentIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="payment_ccy" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="payment_ccyIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="qty" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="qtyIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="standard_settlement_date" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="standard_settlement_dateIsNull" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NrdSecLiability" nillable="true" type="tns:NrdSecLiability" />
+  <xs:complexType name="NrdImportInfoCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfNrdImportInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NrdImportInfoCollection" nillable="true" type="tns:NrdImportInfoCollection" />
+  <xs:complexType name="ArrayOfNrdImportInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NrdImportInfo" nillable="true" type="tns:NrdImportInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNrdImportInfo" nillable="true" type="tns:ArrayOfNrdImportInfo" />
+  <xs:complexType name="NrdImportInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExpDealId" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ExpDealIdIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ExpLiabilityId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ExpLiabilityIdIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FocusTradeId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FocusTradeId2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FocusTradeId2IsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FocusTradeIdIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsMoneyLiability" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsMoneyLiabilityIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RegNo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Egar.TransactionService.Client.Trades" minOccurs="0" name="State" type="q2:NrdImportState" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NrdImportInfo" nillable="true" type="tns:NrdImportInfo" />
+</xs:schema>

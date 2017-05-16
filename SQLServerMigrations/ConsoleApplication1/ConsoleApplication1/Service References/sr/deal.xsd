@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:6767/deal?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:6767/deal?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <xs:import schemaLocation="http://localhost:6767/deal?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Egar.Focus.FieldsRepository" />
+  <xs:import schemaLocation="http://localhost:6767/deal?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Egar.Focus.Events.Base.Helpers" />
+  <xs:import schemaLocation="http://localhost:6767/deal?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface" />
+  <xs:complexType name="EventsScheduleProxy">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EventTypeProperty" nillable="true" type="q1:ArrayOfKeyValueOfstringArrayOfKeyValueOfstringanyTypety7Ep6D1" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EventTypes" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Events" nillable="true" type="tns:ArrayOfDealEventProxy" />
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FieldProperties" nillable="true" type="q3:ArrayOfKeyValueOfstringArrayOfKeyValueOfstringanyTypety7Ep6D1" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Fields" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Properties" nillable="true" type="q5:ArrayOfKeyValueOfstringanyType" />
+      <xs:element minOccurs="0" name="UsedForKnownTypeSerializationObject" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EventsScheduleProxy" nillable="true" type="tns:EventsScheduleProxy" />
+  <xs:complexType name="ArrayOfDealEventProxy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DealEventProxy" nillable="true" type="tns:DealEventProxy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDealEventProxy" nillable="true" type="tns:ArrayOfDealEventProxy" />
+  <xs:complexType name="DealEventProxy">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ActionProperties" nillable="true" type="q6:ArrayOfKeyValueOfstringArrayOfKeyValueOfstringanyTypety7Ep6D1" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Actions" nillable="true" type="q7:ArrayOfstring" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DisplayValue" nillable="true" type="q8:ArrayOfKeyValueOfstringanyType" />
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DisplayValueEng" nillable="true" type="q9:ArrayOfKeyValueOfstringanyType" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="EvaluateMessages" nillable="true" type="q10:ArrayOfKeyValuePairOfstringstring" />
+      <xs:element minOccurs="0" name="EventDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EventType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FieldPossibleValues" nillable="true" type="q11:ArrayOfKeyValueOfstringArrayOfanyTypety7Ep6D1" />
+      <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FieldProperties" nillable="true" type="q12:ArrayOfKeyValueOfstringArrayOfKeyValueOfstringanyTypety7Ep6D1" />
+      <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Fields" nillable="true" type="q13:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NotificationValidate" nillable="true" type="xs:string" />
+      <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Parameters" nillable="true" type="q14:ArrayOfstring" />
+      <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Properties" nillable="true" type="q15:ArrayOfKeyValueOfstringanyType" />
+      <xs:element minOccurs="0" name="RegistrationDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SectionProperties" nillable="true" type="q16:ArrayOfKeyValueOfstringArrayOfKeyValueOfstringanyTypety7Ep6D1" />
+      <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Sections" nillable="true" type="q17:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:int" />
+      <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="StpContext" nillable="true" type="q18:ArrayOfKeyValueOfstringanyType" />
+      <xs:element minOccurs="0" name="UsedForKnownTypeSerializationObject" nillable="true" type="xs:anyType" />
+      <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ValueValidation" nillable="true" type="q19:ArrayOfKeyValueOfstringstring" />
+      <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Values" nillable="true" type="q20:ArrayOfKeyValueOfstringanyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DealEventProxy" nillable="true" type="tns:DealEventProxy" />
+  <xs:complexType name="DealBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Caption" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DealGuid" nillable="true" type="xs:string" />
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="EvaluateMessages" nillable="true" type="q21:ArrayOfKeyValuePairOfstringstring" />
+      <xs:element minOccurs="0" name="Fields" nillable="true" type="tns:ArrayOfDealField" />
+      <xs:element minOccurs="0" name="IsManualEdit" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NeedRefreshFields" type="xs:boolean" />
+      <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="StpActionsEnabled" nillable="true" type="q22:ArrayOfstring" />
+      <xs:element minOccurs="0" name="TemplateId" type="xs:int" />
+      <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="dynamicParams" nillable="true" type="q23:ArrayOfKeyValueOfanyTypeanyType" />
+      <xs:element minOccurs="0" name="nEvents" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DealBase" nillable="true" type="tns:DealBase" />
+  <xs:complexType name="ArrayOfDealField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DealField" nillable="true" type="tns:DealField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDealField" nillable="true" type="tns:ArrayOfDealField" />
+  <xs:complexType name="DealField">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescriptionEng" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ErrorText" nillable="true" type="xs:string" />
+      <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExtraValues" nillable="true" type="q24:ArrayOfKeyValueOfstringanyType" />
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Egar.Focus.FieldsRepository" name="FieldType" type="q25:enumFieldTypes" />
+      <xs:element minOccurs="0" name="FormatString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsManualEdited" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSearchable" type="xs:boolean" />
+      <xs:element name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quotation" type="xs:double" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TextEng" nillable="true" type="xs:string" />
+      <xs:element name="Value" nillable="true" type="xs:anyType" />
+      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Egar.Focus.Events.Base.Helpers" minOccurs="0" name="ValueItems" nillable="true" type="q26:ArrayOfIdName" />
+      <xs:element minOccurs="0" name="ValueType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Visible" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DealField" nillable="true" type="tns:DealField" />
+  <xs:complexType name="ArrayOfAddDealEventContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddDealEventContract" nillable="true" type="tns:AddDealEventContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddDealEventContract" nillable="true" type="tns:ArrayOfAddDealEventContract" />
+  <xs:complexType name="AddDealEventContract">
+    <xs:sequence>
+      <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Fields" nillable="true" type="q27:ArrayOfKeyValueOfstringanyType" />
+      <xs:element minOccurs="0" name="SaveAction" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddDealEventContract" nillable="true" type="tns:AddDealEventContract" />
+  <xs:complexType name="ServiceDealOperation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceOperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Event" nillable="true" type="tns:DealEventProxy" />
+          <xs:element minOccurs="0" name="Deal" nillable="true" type="tns:DealBase" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceDealOperation" nillable="true" type="tns:ServiceDealOperation" />
+  <xs:complexType name="ServiceOperationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsCompleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowMessageBox" type="xs:boolean" />
+      <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface" minOccurs="0" name="actionParams" nillable="true" type="q28:InterActionParams" />
+      <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface" minOccurs="0" name="result" type="q29:OperationErrorCode" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorDump" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceOperationResult" nillable="true" type="tns:ServiceOperationResult" />
+  <xs:complexType name="ServiceValueResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceOperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceValueResult" nillable="true" type="tns:ServiceValueResult" />
+</xs:schema>

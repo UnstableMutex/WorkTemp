@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DealServiceImpl" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:6767/deal?xsd=xsd11" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:6767/deal?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:6767/deal?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/Egar.TransactionService.Client.Trades" />
+      <xsd:import schemaLocation="http://localhost:6767/deal?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Egar.Focus.FieldsRepository" />
+      <xsd:import schemaLocation="http://localhost:6767/deal?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface" />
+      <xsd:import schemaLocation="http://localhost:6767/deal?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Egar.Focus.Framework.Types" />
+      <xsd:import schemaLocation="http://localhost:6767/deal?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:6767/deal?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" />
+      <xsd:import schemaLocation="http://localhost:6767/deal?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+      <xsd:import schemaLocation="http://localhost:6767/deal?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface.BusinessObjects.DealEvents" />
+      <xsd:import schemaLocation="http://localhost:6767/deal?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Egar.Focus.Events.Base.Helpers" />
+      <xsd:import schemaLocation="http://localhost:6767/deal?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface.BusinessObjects.FocusDeals" />
+      <xsd:import schemaLocation="http://localhost:6767/deal?xsd=xsd12" namespace="http://www.w3.org/2005/09/ws-i18n" />
+      <xsd:import schemaLocation="http://localhost:6767/deal?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/_BaseObjects" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDealService_InitializeSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:InitializeSession" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_InitializeSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitializeSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_CloseSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloseSession" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_CloseSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_CloneDeal_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloneDeal" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_CloneDeal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloneDealResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_CreateNewDeal_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewDeal" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_CreateNewDeal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewDealResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_InitiateDeal_InputMessage">
+    <wsdl:part name="parameters" element="tns:InitiateDeal" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_InitiateDeal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitiateDealResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_LoadTrade_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadTrade" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_LoadTrade_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadTradeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_DealFieldsChange_InputMessage">
+    <wsdl:part name="parameters" element="tns:DealFieldsChange" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_DealFieldsChange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DealFieldsChangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_DealFieldChange_InputMessage">
+    <wsdl:part name="parameters" element="tns:DealFieldChange" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_DealFieldChange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DealFieldChangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_DealFieldAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:DealFieldAction" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_DealFieldAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DealFieldActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_ReloadFields_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReloadFields" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_ReloadFields_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReloadFieldsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_TryExecuteSTPAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:TryExecuteSTPAction" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_TryExecuteSTPAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TryExecuteSTPActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_CompleteExecuteAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompleteExecuteAction" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_CompleteExecuteAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompleteExecuteActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_ClickButton_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClickButton" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_ClickButton_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClickButtonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_GetEventsSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventsSchedule" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_GetEventsSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventsScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_ScheduleGetProperty_InputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleGetProperty" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_ScheduleGetProperty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleGetPropertyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_ScheduleGetParameter_InputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleGetParameter" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_ScheduleGetParameter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleGetParameterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_EventStartEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:EventStartEdit" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_EventStartEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EventStartEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_EventSaveEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:EventSaveEdit" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_EventSaveEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EventSaveEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_EventSetValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:EventSetValue" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_EventSetValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EventSetValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_EventCancelEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:EventCancelEdit" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_EventCancelEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EventCancelEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_EventTryExecuteAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:EventTryExecuteAction" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_EventTryExecuteAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EventTryExecuteActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_EventClickButton_InputMessage">
+    <wsdl:part name="parameters" element="tns:EventClickButton" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_EventClickButton_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EventClickButtonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_LinkedTradeEvaluateField_InputMessage">
+    <wsdl:part name="parameters" element="tns:LinkedTradeEvaluateField" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_LinkedTradeEvaluateField_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LinkedTradeEvaluateFieldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_LinkedTradeExecuteSTPAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:LinkedTradeExecuteSTPAction" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_LinkedTradeExecuteSTPAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LinkedTradeExecuteSTPActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_PrintTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrintTicket" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_PrintTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrintTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_UpdateTradeEndOfDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTradeEndOfDate" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_UpdateTradeEndOfDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTradeEndOfDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_UpdateTrade_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTrade" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_UpdateTrade_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTradeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_RecalcOpenTrade_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecalcOpenTrade" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_RecalcOpenTrade_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecalcOpenTradeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_BulkTryExecuteSTPAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:BulkTryExecuteSTPAction" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_BulkTryExecuteSTPAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BulkTryExecuteSTPActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_GetFundingConsolidatedTrade_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFundingConsolidatedTrade" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_GetFundingConsolidatedTrade_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFundingConsolidatedTradeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_BulkEventTryExecuteAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:BulkEventTryExecuteAction" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_BulkEventTryExecuteAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BulkEventTryExecuteActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_ChangeTradeBOStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeTradeBOStatus" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_ChangeTradeBOStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeTradeBOStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_ChangeTradeLSStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeTradeLSStatus" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_ChangeTradeLSStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeTradeLSStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_BulkAddRateChange_InputMessage">
+    <wsdl:part name="parameters" element="tns:BulkAddRateChange" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_BulkAddRateChange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BulkAddRateChangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_GetSessionStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessionStatus" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_GetSessionStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessionStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_ImportBasketRepo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportBasketRepo" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_ImportBasketRepo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportBasketRepoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_LoadTradeMonitor_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadTradeMonitor" />
+  </wsdl:message>
+  <wsdl:message name="IDealService_LoadTradeMonitor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadTradeMonitorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDealService">
+    <wsdl:operation name="InitializeSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/InitializeSession" message="tns:IDealService_InitializeSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/InitializeSessionResponse" message="tns:IDealService_InitializeSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/CloseSession" message="tns:IDealService_CloseSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/CloseSessionResponse" message="tns:IDealService_CloseSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CloneDeal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/CloneDeal" message="tns:IDealService_CloneDeal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/CloneDealResponse" message="tns:IDealService_CloneDeal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewDeal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/CreateNewDeal" message="tns:IDealService_CreateNewDeal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/CreateNewDealResponse" message="tns:IDealService_CreateNewDeal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InitiateDeal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/InitiateDeal" message="tns:IDealService_InitiateDeal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/InitiateDealResponse" message="tns:IDealService_InitiateDeal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadTrade">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/LoadTrade" message="tns:IDealService_LoadTrade_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/LoadTradeResponse" message="tns:IDealService_LoadTrade_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DealFieldsChange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/DealFieldsChange" message="tns:IDealService_DealFieldsChange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/DealFieldsChangeResponse" message="tns:IDealService_DealFieldsChange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DealFieldChange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/DealFieldChange" message="tns:IDealService_DealFieldChange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/DealFieldChangeResponse" message="tns:IDealService_DealFieldChange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DealFieldAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/DealFieldAction" message="tns:IDealService_DealFieldAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/DealFieldActionResponse" message="tns:IDealService_DealFieldAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReloadFields">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/ReloadFields" message="tns:IDealService_ReloadFields_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/ReloadFieldsResponse" message="tns:IDealService_ReloadFields_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TryExecuteSTPAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/TryExecuteSTPAction" message="tns:IDealService_TryExecuteSTPAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/TryExecuteSTPActionResponse" message="tns:IDealService_TryExecuteSTPAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompleteExecuteAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/CompleteExecuteAction" message="tns:IDealService_CompleteExecuteAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/CompleteExecuteActionResponse" message="tns:IDealService_CompleteExecuteAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClickButton">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/ClickButton" message="tns:IDealService_ClickButton_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/ClickButtonResponse" message="tns:IDealService_ClickButton_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEventsSchedule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/GetEventsSchedule" message="tns:IDealService_GetEventsSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/GetEventsScheduleResponse" message="tns:IDealService_GetEventsSchedule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleGetProperty">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/ScheduleGetProperty" message="tns:IDealService_ScheduleGetProperty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/ScheduleGetPropertyResponse" message="tns:IDealService_ScheduleGetProperty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleGetParameter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/ScheduleGetParameter" message="tns:IDealService_ScheduleGetParameter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/ScheduleGetParameterResponse" message="tns:IDealService_ScheduleGetParameter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EventStartEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/EventStartEdit" message="tns:IDealService_EventStartEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/EventStartEditResponse" message="tns:IDealService_EventStartEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EventSaveEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/EventSaveEdit" message="tns:IDealService_EventSaveEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/EventSaveEditResponse" message="tns:IDealService_EventSaveEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EventSetValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/EventSetValue" message="tns:IDealService_EventSetValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/EventSetValueResponse" message="tns:IDealService_EventSetValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EventCancelEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/EventCancelEdit" message="tns:IDealService_EventCancelEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/EventCancelEditResponse" message="tns:IDealService_EventCancelEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EventTryExecuteAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/EventTryExecuteAction" message="tns:IDealService_EventTryExecuteAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/EventTryExecuteActionResponse" message="tns:IDealService_EventTryExecuteAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EventClickButton">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/EventClickButton" message="tns:IDealService_EventClickButton_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/EventClickButtonResponse" message="tns:IDealService_EventClickButton_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LinkedTradeEvaluateField">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/LinkedTradeEvaluateField" message="tns:IDealService_LinkedTradeEvaluateField_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/LinkedTradeEvaluateFieldResponse" message="tns:IDealService_LinkedTradeEvaluateField_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LinkedTradeExecuteSTPAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/LinkedTradeExecuteSTPAction" message="tns:IDealService_LinkedTradeExecuteSTPAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/LinkedTradeExecuteSTPActionResponse" message="tns:IDealService_LinkedTradeExecuteSTPAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintTicket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/PrintTicket" message="tns:IDealService_PrintTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/PrintTicketResponse" message="tns:IDealService_PrintTicket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTradeEndOfDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/UpdateTradeEndOfDate" message="tns:IDealService_UpdateTradeEndOfDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/UpdateTradeEndOfDateResponse" message="tns:IDealService_UpdateTradeEndOfDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTrade">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/UpdateTrade" message="tns:IDealService_UpdateTrade_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/UpdateTradeResponse" message="tns:IDealService_UpdateTrade_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecalcOpenTrade">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/RecalcOpenTrade" message="tns:IDealService_RecalcOpenTrade_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/RecalcOpenTradeResponse" message="tns:IDealService_RecalcOpenTrade_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BulkTryExecuteSTPAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/BulkTryExecuteSTPAction" message="tns:IDealService_BulkTryExecuteSTPAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/BulkTryExecuteSTPActionResponse" message="tns:IDealService_BulkTryExecuteSTPAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFundingConsolidatedTrade">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/GetFundingConsolidatedTrade" message="tns:IDealService_GetFundingConsolidatedTrade_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/GetFundingConsolidatedTradeResponse" message="tns:IDealService_GetFundingConsolidatedTrade_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BulkEventTryExecuteAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/BulkEventTryExecuteAction" message="tns:IDealService_BulkEventTryExecuteAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/BulkEventTryExecuteActionResponse" message="tns:IDealService_BulkEventTryExecuteAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeTradeBOStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/ChangeTradeBOStatus" message="tns:IDealService_ChangeTradeBOStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/ChangeTradeBOStatusResponse" message="tns:IDealService_ChangeTradeBOStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeTradeLSStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/ChangeTradeLSStatus" message="tns:IDealService_ChangeTradeLSStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/ChangeTradeLSStatusResponse" message="tns:IDealService_ChangeTradeLSStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BulkAddRateChange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/BulkAddRateChange" message="tns:IDealService_BulkAddRateChange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/BulkAddRateChangeResponse" message="tns:IDealService_BulkAddRateChange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/GetSessionStatus" message="tns:IDealService_GetSessionStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/GetSessionStatusResponse" message="tns:IDealService_GetSessionStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportBasketRepo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/ImportBasketRepo" message="tns:IDealService_ImportBasketRepo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/ImportBasketRepoResponse" message="tns:IDealService_ImportBasketRepo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadTradeMonitor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealService/LoadTradeMonitor" message="tns:IDealService_LoadTradeMonitor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealService/LoadTradeMonitorResponse" message="tns:IDealService_LoadTradeMonitor_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDealService" type="tns:IDealService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InitializeSession">
+      <soap:operation soapAction="http://tempuri.org/IDealService/InitializeSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseSession">
+      <soap:operation soapAction="http://tempuri.org/IDealService/CloseSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloneDeal">
+      <soap:operation soapAction="http://tempuri.org/IDealService/CloneDeal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewDeal">
+      <soap:operation soapAction="http://tempuri.org/IDealService/CreateNewDeal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitiateDeal">
+      <soap:operation soapAction="http://tempuri.org/IDealService/InitiateDeal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadTrade">
+      <soap:operation soapAction="http://tempuri.org/IDealService/LoadTrade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DealFieldsChange">
+      <soap:operation soapAction="http://tempuri.org/IDealService/DealFieldsChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DealFieldChange">
+      <soap:operation soapAction="http://tempuri.org/IDealService/DealFieldChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DealFieldAction">
+      <soap:operation soapAction="http://tempuri.org/IDealService/DealFieldAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReloadFields">
+      <soap:operation soapAction="http://tempuri.org/IDealService/ReloadFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TryExecuteSTPAction">
+      <soap:operation soapAction="http://tempuri.org/IDealService/TryExecuteSTPAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompleteExecuteAction">
+      <soap:operation soapAction="http://tempuri.org/IDealService/CompleteExecuteAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClickButton">
+      <soap:operation soapAction="http://tempuri.org/IDealService/ClickButton" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventsSchedule">
+      <soap:operation soapAction="http://tempuri.org/IDealService/GetEventsSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleGetProperty">
+      <soap:operation soapAction="http://tempuri.org/IDealService/ScheduleGetProperty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleGetParameter">
+      <soap:operation soapAction="http://tempuri.org/IDealService/ScheduleGetParameter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EventStartEdit">
+      <soap:operation soapAction="http://tempuri.org/IDealService/EventStartEdit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EventSaveEdit">
+      <soap:operation soapAction="http://tempuri.org/IDealService/EventSaveEdit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EventSetValue">
+      <soap:operation soapAction="http://tempuri.org/IDealService/EventSetValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EventCancelEdit">
+      <soap:operation soapAction="http://tempuri.org/IDealService/EventCancelEdit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EventTryExecuteAction">
+      <soap:operation soapAction="http://tempuri.org/IDealService/EventTryExecuteAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EventClickButton">
+      <soap:operation soapAction="http://tempuri.org/IDealService/EventClickButton" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LinkedTradeEvaluateField">
+      <soap:operation soapAction="http://tempuri.org/IDealService/LinkedTradeEvaluateField" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LinkedTradeExecuteSTPAction">
+      <soap:operation soapAction="http://tempuri.org/IDealService/LinkedTradeExecuteSTPAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintTicket">
+      <soap:operation soapAction="http://tempuri.org/IDealService/PrintTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTradeEndOfDate">
+      <soap:operation soapAction="http://tempuri.org/IDealService/UpdateTradeEndOfDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTrade">
+      <soap:operation soapAction="http://tempuri.org/IDealService/UpdateTrade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecalcOpenTrade">
+      <soap:operation soapAction="http://tempuri.org/IDealService/RecalcOpenTrade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BulkTryExecuteSTPAction">
+      <soap:operation soapAction="http://tempuri.org/IDealService/BulkTryExecuteSTPAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFundingConsolidatedTrade">
+      <soap:operation soapAction="http://tempuri.org/IDealService/GetFundingConsolidatedTrade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BulkEventTryExecuteAction">
+      <soap:operation soapAction="http://tempuri.org/IDealService/BulkEventTryExecuteAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeTradeBOStatus">
+      <soap:operation soapAction="http://tempuri.org/IDealService/ChangeTradeBOStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeTradeLSStatus">
+      <soap:operation soapAction="http://tempuri.org/IDealService/ChangeTradeLSStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BulkAddRateChange">
+      <soap:operation soapAction="http://tempuri.org/IDealService/BulkAddRateChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionStatus">
+      <soap:operation soapAction="http://tempuri.org/IDealService/GetSessionStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportBasketRepo">
+      <soap:operation soapAction="http://tempuri.org/IDealService/ImportBasketRepo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadTradeMonitor">
+      <soap:operation soapAction="http://tempuri.org/IDealService/LoadTradeMonitor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DealServiceImpl">
+    <wsdl:port name="BasicHttpBinding_IDealService" binding="tns:BasicHttpBinding_IDealService">
+      <soap:address location="http://localhost:6767/deal" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

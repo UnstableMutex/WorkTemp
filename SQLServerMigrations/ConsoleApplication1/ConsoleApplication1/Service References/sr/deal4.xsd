@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface.BusinessObjects.FocusDeals" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface.BusinessObjects.FocusDeals" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:6767/deal?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:6767/deal?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Egar.Focus.Events.Base.Helpers" />
+  <xs:complexType name="TradeInstruments">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="actions" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element name="columns" nillable="true" type="tns:ArrayOfTradeInstrumentColumn" />
+      <xs:element name="rows" nillable="true" type="tns:ArrayOfTradeInstrumentRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TradeInstruments" nillable="true" type="tns:TradeInstruments" />
+  <xs:complexType name="ArrayOfTradeInstrumentColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TradeInstrumentColumn" nillable="true" type="tns:TradeInstrumentColumn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTradeInstrumentColumn" nillable="true" type="tns:ArrayOfTradeInstrumentColumn" />
+  <xs:complexType name="TradeInstrumentColumn">
+    <xs:sequence>
+      <xs:element name="caption" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="enabled" type="xs:boolean" />
+      <xs:element name="fieldType" nillable="true" type="xs:string" />
+      <xs:element name="name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Egar.Focus.Events.Base.Helpers" minOccurs="0" name="possibleValues" nillable="true" type="q2:ArrayOfIdName" />
+      <xs:element minOccurs="0" name="visible" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TradeInstrumentColumn" nillable="true" type="tns:TradeInstrumentColumn" />
+  <xs:complexType name="ArrayOfTradeInstrumentRow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TradeInstrumentRow" nillable="true" type="tns:TradeInstrumentRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTradeInstrumentRow" nillable="true" type="tns:ArrayOfTradeInstrumentRow" />
+  <xs:complexType name="TradeInstrumentRow">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="items" nillable="true" type="q3:ArrayOfanyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TradeInstrumentRow" nillable="true" type="tns:TradeInstrumentRow" />
+</xs:schema>

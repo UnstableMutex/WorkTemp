@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:6767/deal?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:6767/deal?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:6767/deal?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" />
+  <xs:simpleType name="OperationErrorCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PermissionsNotAllowed">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1600</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InsuffisientEntry">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1500</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ValidationError">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1400</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RealFlowsExistsError">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1300</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NettingFlowsExists">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1200</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FlowsBOStatusExists">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1100</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UnsupportedOperation">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1090</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UnspecifiedError">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1000</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ConfirmMessage">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RealFlowsExists">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TradeDateIsHoliday">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Warning">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Success">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PrintTicket">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OperationErrorCode" nillable="true" type="tns:OperationErrorCode" />
+  <xs:complexType name="InterActionParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="actionResults" nillable="true" type="tns:ArrayOfActionResult" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="formFields" nillable="true" type="q1:ArrayOfKeyValueOfstringanyType" />
+      <xs:element minOccurs="0" name="formName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ignoreWarnings" type="xs:boolean" />
+      <xs:element minOccurs="0" name="needToPrintTicket" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InterActionParams" nillable="true" type="tns:InterActionParams" />
+  <xs:complexType name="ArrayOfActionResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ActionResult" nillable="true" type="tns:ActionResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfActionResult" nillable="true" type="tns:ArrayOfActionResult" />
+  <xs:complexType name="ActionResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomFormName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShowMessage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="caption" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="defaultAnswer" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="possibleAnswers" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="result" type="tns:OperationErrorCode" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="userAnswer" nillable="true" type="q3:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActionResult" nillable="true" type="tns:ActionResult" />
+  <xs:complexType name="InterActionParamSchedule">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InterActionParams">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Egar.Focus.Modules.DealModule.Integration" minOccurs="0" name="Schedule" nillable="true" type="q4:EventsScheduleProxy" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InterActionParamSchedule" nillable="true" type="tns:InterActionParamSchedule" />
+  <xs:complexType name="InterActionLinkedTrade">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InterActionParams">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LinkedTrade" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InterActionLinkedTrade" nillable="true" type="tns:InterActionLinkedTrade" />
+</xs:schema>

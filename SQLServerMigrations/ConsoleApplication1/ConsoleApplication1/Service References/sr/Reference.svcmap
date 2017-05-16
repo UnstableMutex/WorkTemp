@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8f27bf2c-8d2f-4d5f-9cd8-30a32107c3e1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:6767/deal" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="deal.xsd" MetadataType="Schema" ID="f6413b89-9312-4107-b3f6-ec7dfe33b144" SourceId="1" SourceUrl="http://localhost:6767/deal?xsd=xsd6" />
+    <MetadataFile FileName="deal1.xsd" MetadataType="Schema" ID="886661d8-01b7-4a47-870d-eb6835f19ed1" SourceId="1" SourceUrl="http://localhost:6767/deal?xsd=xsd13" />
+    <MetadataFile FileName="deal2.xsd" MetadataType="Schema" ID="ccc88f00-9f87-4e9b-82f8-ef6511203c61" SourceId="1" SourceUrl="http://localhost:6767/deal?xsd=xsd8" />
+    <MetadataFile FileName="deal3.xsd" MetadataType="Schema" ID="4f9f8ddb-6c53-43fc-a8ae-d7815765d888" SourceId="1" SourceUrl="http://localhost:6767/deal?xsd=xsd4" />
+    <MetadataFile FileName="deal4.xsd" MetadataType="Schema" ID="42556af4-bdd1-4491-8fa3-8f2babe5cacf" SourceId="1" SourceUrl="http://localhost:6767/deal?xsd=xsd10" />
+    <MetadataFile FileName="deal5.xsd" MetadataType="Schema" ID="f89c0bce-bbe1-4c97-8d92-ae121e2e6c76" SourceId="1" SourceUrl="http://localhost:6767/deal?xsd=xsd2" />
+    <MetadataFile FileName="deal6.xsd" MetadataType="Schema" ID="c6494636-c1e4-42d6-b37c-c3a4e568147f" SourceId="1" SourceUrl="http://localhost:6767/deal?xsd=xsd12" />
+    <MetadataFile FileName="deal7.xsd" MetadataType="Schema" ID="1fa8a933-ef51-40cf-944c-caaa7acad375" SourceId="1" SourceUrl="http://localhost:6767/deal?xsd=xsd1" />
+    <MetadataFile FileName="DealServiceImpl.wsdl" MetadataType="Wsdl" ID="a0a0665d-0a68-46cc-a130-82987189e812" SourceId="1" SourceUrl="http://localhost:6767/deal?wsdl" />
+    <MetadataFile FileName="deal8.xsd" MetadataType="Schema" ID="1357bd1d-332b-4bc6-a49f-f54db29cf4f2" SourceId="1" SourceUrl="http://localhost:6767/deal?xsd=xsd5" />
+    <MetadataFile FileName="deal9.xsd" MetadataType="Schema" ID="0be3fc67-6c2c-4e47-9968-4dd235752d09" SourceId="1" SourceUrl="http://localhost:6767/deal?xsd=xsd7" />
+    <MetadataFile FileName="deal10.xsd" MetadataType="Schema" ID="b42ad150-2c95-4fc0-a1eb-dc3a982645ff" SourceId="1" SourceUrl="http://localhost:6767/deal?xsd=xsd0" />
+    <MetadataFile FileName="deal11.xsd" MetadataType="Schema" ID="fc13ce6a-721a-4d3d-a6cc-0fb737c4683d" SourceId="1" SourceUrl="http://localhost:6767/deal?xsd=xsd9" />
+    <MetadataFile FileName="deal12.xsd" MetadataType="Schema" ID="a4959993-ec82-45cd-a15f-86f053f65079" SourceId="1" SourceUrl="http://localhost:6767/deal?xsd=xsd11" />
+    <MetadataFile FileName="deal13.xsd" MetadataType="Schema" ID="56c23151-b4e2-4d5f-967b-f43c16b87297" SourceId="1" SourceUrl="http://localhost:6767/deal?xsd=xsd3" />
+    <MetadataFile FileName="deal.disco" MetadataType="Disco" ID="47952d72-19bb-43d2-ac52-6192c4168683" SourceId="1" SourceUrl="http://localhost:6767/deal?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

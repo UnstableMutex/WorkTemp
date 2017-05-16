@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface.BusinessObjects.DealEvents" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Egar.Focus.Interface.BusinessObjects.DealEvents" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="ExerciseType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ExpiryNoBarrier" />
+      <xs:enumeration value="ExerciseNoBarrier" />
+      <xs:enumeration value="ExpiryBarrier" />
+      <xs:enumeration value="ExerciseBarrier" />
+      <xs:enumeration value="TeminationNoBarrier" />
+      <xs:enumeration value="TerminationBarrier" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ExerciseType" nillable="true" type="tns:ExerciseType" />
+</xs:schema>

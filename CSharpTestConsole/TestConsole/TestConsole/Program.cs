@@ -7,28 +7,39 @@ namespace TestConsole
 {
     class Program
     {
+        private const  int StepCount = 500;
+        private const decimal startPrice = 5;
+
+        private const decimal endPrice = 1.5M;
+
+        private static decimal stepprice;
         static void Main(string[] args)
         {
-            int[] arr = {14, 45, 67};
-            var s = Join(arr);
-            var a = string.Join(",", arr.Select(x=>x.ToString()).ToArray());
-            var c = arr.ToString();
-            Console.WriteLine(s);
+            decimal sum;
+            for (int i = 1; i < StepCount; i++)
+            {
+                var res = realY(i);
+               Console.WriteLine(res);
+            }
             Console.ReadKey();
+
         }
-               
+
+    
+
+      static  decimal stepPrice(decimal step)
+        {
+            var realX = -.007M * step+5.007M;
+            return realX;
+        }
+
+     static   decimal realY(int step)
+        {
+            var tmp = 860*step/500 ;
+            return stepPrice(tmp);
+        }
 
              
-        public static string Join(int[] array)
-        {
-            string sTrades = string.Empty;
-            for (int i = 0; i < array.Count(); i++)
-            {
-                sTrades += array[i].ToString();
-                if (i < array.Count() - 1)
-                    sTrades += ",";
-            }
-            return sTrades;
-        }
+      
     }
 }
