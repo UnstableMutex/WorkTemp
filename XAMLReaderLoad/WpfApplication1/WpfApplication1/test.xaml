@@ -1,4 +1,5 @@
 <StackPanel xmlns='http://schemas.microsoft.com/winfx/2006/xaml/presentation'>
 	<Label>test</Label>
 	<TextBox></TextBox>
+	<TextBlock Text="textblock"/>
 </StackPanel>
