@@ -27,18 +27,7 @@ namespace WpfApplication1
         }
 
 
-        private void Thumb_OnDragDelta(object sender, DragDeltaEventArgs e)
-        {
-
-            var move = new Vector(e.HorizontalChange, e.VerticalChange);
-            MoveOnCanvas(thumbTarget, move);
-        }
-
-        void MoveOnCanvas(UIElement control, Vector move)
-        {
-            Canvas.SetLeft(control, Canvas.GetLeft(control) + move.X);
-            Canvas.SetTop(control, Canvas.GetTop(control) + move.Y);
-        }
+     
 
     
     }
