@@ -69,7 +69,7 @@ namespace MonitorCL
                 var b = resp.StatusCode == HttpStatusCode.BadGateway;
                 if (b)
                 {
-                    var s = string.Format("{0} {1}", mci.ServerAddress, "502");
+                    var s = string.Format("{2:hh:mm:ss.fff} - {0} {1}", mci.ServerAddress, "502", DateTime.Now);
                     Out.WriteLine(s);
                 }
 
