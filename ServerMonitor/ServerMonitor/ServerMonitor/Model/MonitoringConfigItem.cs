@@ -6,9 +6,5 @@ using System.Threading.Tasks;
 
 namespace ServerMonitor.Model
 {
-    [Serializable]
-    public class MonitoringConfigItem
-    {
-        public string ServerAddress { get; set; }
-    }
+  
 }
