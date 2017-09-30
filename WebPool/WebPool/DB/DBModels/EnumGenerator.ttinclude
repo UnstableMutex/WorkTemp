@@ -45,6 +45,7 @@ namespace <#= project.Properties.Item("DefaultNamespace").Value #><#= Path.GetDi
             for (int i = 0; i < colcount; i++)
             {
                 var colName = reader.GetName(i);
+				colName=RemoveUnderline(colName);
 				if (colName==tableName)//Будет ошшибка что имя класса не должно совпадать с полем
                 {
 					colName+="1";
@@ -62,6 +63,10 @@ namespace <#= project.Properties.Item("DefaultNamespace").Value #><#= Path.GetDi
         Regex rx = new Regex(@"(?:[^a-zA-Z0-9]*)(?<first>[a-zA-Z0-9])(?<reminder>[a-zA-Z0-9]*)(?:[^a-zA-Z0-9]*)");
         return rx.Replace(value.ToString(), m => m.Groups["first"].ToString().ToUpper() + m.Groups["reminder"].ToString().ToLower());
     }
+	private string RemoveUnderline(string fieldName)
+    {
+		return fieldName.Replace("_ID","ID");
+    }
 	private string DBTypeNameToCSTypeName(string dbtypename)
 	{
 	switch (dbtypename)
@@ -73,6 +78,16 @@ namespace <#= project.Properties.Item("DefaultNamespace").Value #><#= Path.GetDi
 			return "string";
 		case "tinyint":
 			return "sbyte";
+		case "date":
+		case "datetime":
+		case "datetime2":
+			return "DateTime";
+		case "bit":
+			return "bool";
+		case "uniqueidentifier":
+			return "Guid";
+		case "bigint":
+			return "long";
 		default:
 			return dbtypename;
         }

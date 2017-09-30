@@ -192,12 +192,31 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DB\DBModels\CheckAnswer.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckAnswer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\DBModels\Pool.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pool.tt</DependentUpon>
+    </Compile>
     <Compile Include="DB\DBModels\Question.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Question.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\DBNoCache.cs" />
+    <Compile Include="DB\DBModels\QuestionType.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuestionType.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\DBModels\UserOpenAnswer.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserOpenAnswer.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -211,9 +230,25 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <None Include="DB\DBModels\EnumGenerator.ttinclude" />
+    <Content Include="DB\DBModels\CheckAnswer.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CheckAnswer.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\DBModels\Pool.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Pool.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="DB\DBModels\Question.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Question.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\DBModels\QuestionType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>QuestionType.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\DBModels\UserOpenAnswer.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UserOpenAnswer.generated.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
