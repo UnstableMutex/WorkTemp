@@ -1,0 +1,9 @@
+﻿@model WebPool.Models.CheckedQuestionViewModel
+<div class="CheckedQuestion">
+    <OL>
+        @foreach (var ans in @Model.Answers)
+        {
+            <LI><label><input type="checkbox" name="@ans.Index@ans.Name" />@ans.Answer</label></LI>
+        }
+    </OL>
+</div>

@@ -12,7 +12,8 @@ namespace WebPool.Models
             _model = model;
             _parent = parent;
         }
-        public string Answer { get; }
+
+        public string Answer => _model.Answer;
         public string Index => _parent.Index + _model.ID.Surr();
         public string Name => "CheckedAnswer";
     }

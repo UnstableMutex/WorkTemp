@@ -1,14 +1,26 @@
-﻿@model WebPool.Models.PoolViewModel
+﻿@using WebPool.Models
+@model WebPool.Models.PoolViewModel
+<H1>Опрос</H1>
+<h2>@Model.Pool.Name</h2>
+<!--вопросы-->
+@using (Html.BeginForm("Contact"))
+{
+    foreach (var question in @Model.Questions)
+    {
+        <div class="OneQuestion">
+            <h1>@question.Question</h1>
+            @if (question is CheckedQuestionViewModel)
+            {
+                var q = question as CheckedQuestionViewModel;
+                @Html.Partial("CheckedQuestionPartial", q)
 
-    @{
-        ViewBag.Title = "About";
+            }
+            @if (question is OpenQuestionViewModel)
+            {
+                var q = question as OpenQuestionViewModel;
+                @Html.Partial("OpenQuestionPartial", q)
+
+            }
+        </div>
     }
-    <h2>@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
-
-    <p>Use this area to provide additional information.</p>
-
-
-
-    <p>@Model.Pool.Name</p>
-
+}

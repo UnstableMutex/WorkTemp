@@ -11,6 +11,7 @@ namespace WebPool.Models
             Model = model;
         }
 
+        public string Question => Model.Question;
         public string Index => Model.ID.Surr();
         public string Name => "Question";
     }
