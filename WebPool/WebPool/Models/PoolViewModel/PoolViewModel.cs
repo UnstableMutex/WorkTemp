@@ -9,6 +9,11 @@ namespace WebPool.Models
 {
     public class PoolViewModel
     {
+        public PoolViewModel(Pool pool)
+        {
+            Pool = pool;
+        }
+
         public Pool Pool { get; set; }
         public IReadOnlyList<QuestionViewModel> Questions { get; set; }
     }

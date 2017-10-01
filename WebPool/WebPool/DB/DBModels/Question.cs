@@ -6,7 +6,7 @@ using System.Web;
 
 namespace WebPool.DB.DBModels
 {
-   
+
     public class QuestionBase
     {
         public int ID { get; set; }
@@ -14,13 +14,17 @@ namespace WebPool.DB.DBModels
         public string Question { get; set; }
     }
 
-    public class OpenQuestion:QuestionBase
+    public enum QuestionType : byte
     {
-        
+        Open = 1, Checkboxed = 2
+    }
+    public class OpenQuestion : QuestionBase
+    {
+
     }
 
-    public class CheckedQuestion:QuestionBase
+    public class CheckedQuestion : QuestionBase
     {
-        
+
     }
 }

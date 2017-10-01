@@ -2,11 +2,11 @@ using WebPool.DB.DBModels;
 
 namespace WebPool.Models
 {
-    public class CheckedQuestionViewModel : QuestionViewModel, IControlName
+    public class CheckedQuestionViewModel : QuestionViewModel<CheckedQuestion>, IControlName
     {
-        private readonly Question _model;
+        private readonly CheckedQuestion _model;
 
-        public CheckedQuestionViewModel(Question model)
+        public CheckedQuestionViewModel(CheckedQuestion model) : base(model)
         {
             _model = model;
         }
