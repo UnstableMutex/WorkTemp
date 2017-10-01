@@ -230,7 +230,12 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\PoolModel.cs" />
+    <Compile Include="Models\PoolViewModel\CheckedAnswerViewModel.cs" />
+    <Compile Include="Models\PoolViewModel\CheckedQuestionViewModel.cs" />
+    <Compile Include="Models\PoolViewModel\IControlName.cs" />
+    <Compile Include="Models\PoolViewModel\OpenQuestionViewModel.cs" />
+    <Compile Include="Models\PoolViewModel\PoolViewModel.cs" />
+    <Compile Include="Models\PoolViewModel\QuestionViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
