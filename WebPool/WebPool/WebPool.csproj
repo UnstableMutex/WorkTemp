@@ -198,6 +198,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DB\DBCache.cs" />
     <Compile Include="DB\DBModels\CheckAnswer.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -220,6 +221,11 @@
       <DependentUpon>UserOpenAnswer.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\DBNoCache.cs" />
+    <Compile Include="DB\Mappers\CheckAnswerMapper.cs" />
+    <Compile Include="DB\Mappers\IResultSetMapper.cs" />
+    <Compile Include="DB\Mappers\IRowMapper.cs" />
+    <Compile Include="DB\Mappers\PoolMapper.cs" />
+    <Compile Include="DB\Mappers\QuestionMapper.cs" />
     <Compile Include="Ext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -2,16 +2,21 @@ using WebPool.DB.DBModels;
 
 namespace WebPool.Models
 {
-    public class QuestionViewModel<T> : IControlName where T : QuestionBase
+    public class QuestionViewModel<T> : IViewModel<T>, IControlName where T : QuestionBase
     {
-        private readonly T _model;
+        protected virtual T Model { get; set; }
 
         public QuestionViewModel(T model)
         {
-            _model = model;
+            Model = model;
         }
 
-        public string Index => _model.ID.Surr();
+        public string Index => Model.ID.Surr();
         public string Name => "Question";
+    }
+
+    interface IViewModel<in T>
+    {
+
     }
 }

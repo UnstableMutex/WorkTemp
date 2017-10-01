@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using WebPool.Models;
 
 namespace WebPool.Controllers
 {
@@ -20,8 +21,9 @@ namespace WebPool.Controllers
         {
             ViewBag.Message = "Your application description page.";
             var uid = User.Identity.GetUserId();
-            var g = Guid.Parse(uid);
-            return View();
+            //var g = Guid.Parse(uid);
+            var pool = PoolVMBuilder.Build();
+            return View(pool);
         }
 
         public ActionResult Contact()

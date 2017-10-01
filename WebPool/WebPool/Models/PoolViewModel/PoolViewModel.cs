@@ -15,6 +15,6 @@ namespace WebPool.Models
         }
 
         public Pool Pool { get; set; }
-        public IReadOnlyList<QuestionViewModel> Questions { get; set; }
+        public IReadOnlyList<QuestionViewModel<QuestionBase>> Questions { get; set; }
     }
 }
