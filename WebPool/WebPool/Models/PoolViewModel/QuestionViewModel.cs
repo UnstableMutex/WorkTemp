@@ -1,8 +1,17 @@
+using WebPool.DB.DBModels;
+
 namespace WebPool.Models
 {
-    public class QuestionViewModel
+    public class QuestionViewModel: IControlName
     {
+        private readonly Question _model;
 
-        public string Indexer { get; set; }
+        public QuestionViewModel(Question model)
+        {
+            _model = model;
+        }
+
+        public string Index => _model.ID.Surr();
+        public string Name => "Question";
     }
 }
