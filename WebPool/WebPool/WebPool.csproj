@@ -223,6 +223,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserOpenAnswer.tt</DependentUpon>
     </Compile>
+    <Compile Include="Ext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

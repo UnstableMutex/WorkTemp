@@ -51,17 +51,7 @@ namespace WebPool.Models
         public string Name => "CheckedAnswer";
     }
 
-    static class Ext
-    {
-        public static string Surr(this string s)
-        {
-            return "[" + s + "]";
-        }
-         public static string Surr(this int s)
-        {
-            return "[" + s + "]";
-        }      
-    }
+
 
     public interface IControlName
     {
