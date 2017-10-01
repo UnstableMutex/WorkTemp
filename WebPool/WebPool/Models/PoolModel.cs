@@ -18,15 +18,55 @@ namespace WebPool.Models
         public string Indexer { get; set; }
     }
 
-    public class OpenQuestionViewModel : QuestionViewModel
+    public class OpenQuestionViewModel : QuestionViewModel, IControlName
     {
-        
+        public string Index { get; }
+        public string Name { get; }
     }
 
-    public class CheckedQuestionViewModel : QuestionViewModel
+    public class CheckedQuestionViewModel : QuestionViewModel, IControlName
     {
-        
+        private readonly Question _model;
+
+        public CheckedQuestionViewModel(Question model)
+        {
+            _model = model;
+        }
+        public string Index => _model.ID.Surr();
+        public string Name { get; }
     }
-    public class CheckedAnswerViewModel
-    { }
+
+    public class CheckedAnswerViewModel : IControlName
+    {
+        private readonly CheckAnswer _model;
+        private readonly IControlName _parent;
+
+        public CheckedAnswerViewModel(CheckAnswer model, IControlName parent)
+        {
+            _model = model;
+            _parent = parent;
+        }
+        public string Answer { get; }
+        public string Index => _parent.Index + _model.ID.Surr();
+        public string Name => "CheckedAnswer";
+    }
+
+    static class Ext
+    {
+        public static string Surr(this string s)
+        {
+            return "[" + s + "]";
+        }
+         public static string Surr(this int s)
+        {
+            return "[" + s + "]";
+        }      
+    }
+
+    public interface IControlName
+    {
+        string Index { get; }
+        string Name { get; }
+    }
+
 }
