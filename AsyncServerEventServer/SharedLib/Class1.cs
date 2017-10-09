@@ -66,9 +66,12 @@ namespace SharedLib
 
 
             Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);         
-            // Send the message to the connected TcpServer. 
-            stream.Write(data, 0, data.Length);
-
+            //// Send the message to the connected TcpServer. 
+            //stream.Write(data, 0, data.Length);
+            var w = new StreamWriter(stream);
+            w.AutoFlush = false;
+            w.Write(message);
+            w.Flush();
             Console.WriteLine("Sent: {0}", message);
 
 
