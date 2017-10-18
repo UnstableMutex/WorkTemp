@@ -1,0 +1,38 @@
+﻿<Window x:Class="SampleAffil.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="199*"/>
+            <ColumnDefinition Width="318*"/>
+        </Grid.ColumnDefinitions>
+        <RadioButton>Выбор из списка</RadioButton>
+        <RadioButton  Grid.Row="1">Ввод</RadioButton>
+        <ComboBox  Visibility="Collapsed" Grid.Column="1"/>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="107*"/>
+            </Grid.ColumnDefinitions>
+            <Label>Фамилия</Label>
+
+            <Label Grid.Row="1">Имя</Label>
+            <Label Grid.Row="2">Отчество</Label>
+            <TextBox Grid.Column="1"></TextBox>
+
+            <TextBox Grid.Column="1" Grid.Row="1"></TextBox>
+            <TextBox Grid.Column="1" Grid.Row="2"></TextBox>
+        </Grid>
+    </Grid>
+</Window>
