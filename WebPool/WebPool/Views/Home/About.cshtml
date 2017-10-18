@@ -3,7 +3,7 @@
 <H1>Опрос</H1>
 <h2>@Model.Pool.Name</h2>
 <!--вопросы-->
-@using (Html.BeginForm("Contact"))
+@using (Html.BeginForm("Contact", "Home", FormMethod.Post))
 {
     foreach (var question in @Model.Questions)
     {
@@ -23,4 +23,5 @@
             }
         </div>
     }
+    <input type="submit" value="Завершить опрос" />
 }
