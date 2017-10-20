@@ -1,0 +1,17 @@
+{
+  "name": "moduleslab",
+  "version": "1.0.0",
+  "description": "testdesc",
+  "main": "main.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "typescript": "^2.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
