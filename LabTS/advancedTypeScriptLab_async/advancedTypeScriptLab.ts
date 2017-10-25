@@ -101,15 +101,14 @@ for (let elem of standardElements) {
     elem.style.height = "60px"
     elem.style.margin = "5px"
     let elemClass = new movingElement(elem);    
-    getAvatar_Promise(elemClass.element);
+    getAvatar_Async(elemClass.element);
 }
-function getAvatar_Promise (elem: HTMLElement) {
-    fetch('https://uinames.com/api/').then(function(response) {
-        return response.json();
-    }).then(function(response) {
-        alert('Hi! My name is ' + response.name);
-        let avatar = 'https://robohash.org/set_set3/'+ response.name +'?size=60x60' 
-        elem.style.backgroundImage = 'url("' + avatar + '")';
-        document.body.appendChild(elem);
-    })
+async function getAvatar_Async(elem: HTMLElement) {
+    let uiName = await fetch('https://uinames.com/api/');
+    let avatarName = await uiName.json();
+    alert('Hi! My name is ' + avatarName.name);
+    let avatar = 'https://robohash.org/set_set3/'+ avatarName.name +'?size=60x60' 
+    elem.style.backgroundImage = 'url("' + avatar + '")';
+    document.body.appendChild(elem);
+    
 }
