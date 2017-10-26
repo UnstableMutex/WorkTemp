@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script src="https://unpkg.com/vue"></script>
+
+
+<ul id="example-1">
+    <li v-bind:id="'chk'+item.id" v-for="item in items">
+      {{ item.message }}
+    </li>
+  </ul>
+
+<script>
+var example1 = new Vue({
+  el: '#example-1',
+  data: {
+    items: [
+      { message: 'Foo', id:1 },
+      { message: 'Bar',id:2 },
+      { message: 'Fizz',id:3 },
+      
+    ]
+  }
+})
+</script>
+
+</body>
+</html>
